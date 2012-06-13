@@ -1,9 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Login_model extends MY_Model
-{
-    protected $table = 'user';
-    
+{   
     public function login($username, $password)
     {
         $user = $this->db->select('*')
@@ -11,11 +9,11 @@ class Login_model extends MY_Model
                 ->where(array('username' => $username, 'password' => MD5($password)))
                 ->limit(1)
                 ->get()->result();
-        if (sizeof($user)>0) {
-            return $user[0];
+        if (empty($user)) {
+            return false;
         }
         else
-            return false;
+            return $user[0];
     }
     
     public function user_exist($username){
@@ -24,11 +22,11 @@ class Login_model extends MY_Model
                 ->where(array('username' => $username))
                 ->limit(1)
                 ->get()->result();
-        if (sizeof($user)>0) {
-            return true;
+        if (empty($user)) {
+            return false;
         }
         else
-            return false;
+            return true;
     }
     
     public function create_user($username, $password, $email = '', $admin = 0) {
