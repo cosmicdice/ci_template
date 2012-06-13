@@ -2,7 +2,7 @@
 <html lang = "en">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<title>Curatr Peer Marking Showcase</title>
+		<title>CI_Template</title>
 		<link href="<?php echo bootcss_url(); ?>" type="text/css" rel="stylesheet" />
 		<link href="<?php echo datatablescss_url(); ?>" type="text/css" rel="stylesheet" />
 		<link href="<?php echo css_url('style'); ?>" type="text/css" rel="stylesheet" />
@@ -21,4 +21,3 @@
 	</head>
 	<body>
 		<div id="page">
-			
